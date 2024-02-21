@@ -8,6 +8,10 @@
     overflow-x: hidden;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 a {
     text-decoration:none;
     color: white;
@@ -428,14 +432,102 @@ h1, h2, h3 {
     width: 100%;
     background-color: white;
     color: black;
+    padding-bottom: 50px;
   }
 
+  .partners__content {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    gap: 30px;
+  }
   .layout .partners__block {
     display: flex;
     align-items: center;
-    border: 1px solid red;
+  }
+  .layout .partners__title {
+    width: 30%;
   }
 
-  .partners__logo-block {
-    background-color: aqua;
+  .layout .partners__logo-block {
+    display: flex;
+    gap: 20px;
+  }
+  .layout .partners__block img {
+    align-self: center;
+  }
+
+  .layout .partners__block h3 {
+    position: relative;
+    width: max-content;
+    z-index: 0;
+  }
+  .layout .partners__block h3::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--main-content-color);
+    z-index: -1;
+  }
+
+  /* registration */
+
+  .layout #registration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    color: black;
+    padding-bottom: 50px;
+  }
+  .layout #registration span {
+    text-align: center;
+    font-size: 18px;
+  }
+  .layout .registration__text_red {
+    color: var(--main-content-color);
+  }
+  .layout #registration form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* border: 1px solid red; */
+    width: 50%;
+    margin: 20px 0;
+  }
+  .layout #registration div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .layout input {
+    padding: 10px;
+    border: none;
+  }
+
+  .layout input::placeholder {
+    color: black;
+    opacity: 0.5;
+  }
+  .layout #registration button {
+    margin: 20px 0 0 0;
+    display: flex;
+    align-self: center;
+    width: max-content;
+    padding: 10px 30px;
+    border-radius: 40px;
+    border: 1px solid var(--main-content-color);
+    font-size: 20px;
+    color: var(--main-content-color);
+    cursor: pointer;
+  }
+
+  .layout #registration a {
+    color: black;
+    margin-top: 5px;
+    border-bottom: 1px dotted black;
   }
