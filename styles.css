@@ -124,10 +124,9 @@ body{
     width: 100vw;
     max-width: 1210px;
     height: 760px;
-    background-image: url(./assets/event_image.png);
-    background-repeat: no-repeat;
-    background-position: -1;
     background-color: var(--main-bg-color);
+    position: relative;
+    z-index: 1;
 }
 .layout #slider a {
   color: white;
@@ -138,7 +137,10 @@ body{
     justify-content: space-between;
     margin: 0px 40px;
 }
-
+.layout .slider__image{
+  position: absolute;
+  z-index: -1;
+}
 .layout .slider__logo {
     padding: 30px 20px 15px;
     background-color: var(--main-content-color);
