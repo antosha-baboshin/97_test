@@ -26,8 +26,14 @@ body{
 }
 
 .layout li {
-    list-style-type: none;
+  font-size: 15px;
+  list-style-type: disc;
 }
+.layout li::marker {
+  color: var(--main-content-color);
+  font-size: 10px;
+}
+
 .layout ul {
     margin: 0;
     padding: 0;
@@ -44,13 +50,62 @@ body{
   font-weight: 400;
 }
 
-
 .layout h3 {
   font-size: 25px;
 }
 
 .layout h4 {
   font-size: 18px;
+  position: relative;
+  width: max-content;
+  z-index: 0;
+}
+
+.layout h4::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--main-content-color);
+  z-index: -1;
+}
+.layout table {
+  display: flex;
+  align-self: flex-start;
+  margin-left: 20px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.layout form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 60%;
+  margin: 20px 0;
+}
+
+.layout input {
+  padding: 10px;
+  border: none;
+}
+
+.layout input::placeholder {
+  color: black;
+  opacity: 0.5;
+}
+.layout button {
+  margin: 20px 0 0 0;
+  display: flex;
+  align-self: center;
+  padding: 10px 30px;
+  border-radius: 40px;
+  border: 1px solid var(--main-content-color);
+  font-size: 20px;
+  color: var(--main-content-color);
+  cursor: pointer;
 }
 
 .layout section {
@@ -181,6 +236,7 @@ body{
     border-bottom: 1px dotted black;
     text-align: center;
     cursor: pointer;
+    list-style-type: none;
 } 
 
 .layout .menu__line{ 
@@ -206,24 +262,6 @@ body{
     width: 100%;
   }
 
-  .layout .info__item h4 {
-    position: relative;
-    width: max-content;
-    z-index: 0;
-    background-color: aqua;
-  }
-
-  .layout .info__item h4::after {
-    content: '';
-    position: absolute;
-    bottom: 3px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: var(--main-content-color);
-    z-index: -1;
-  }
-
   .layout .info__content {
     display: flex;
     flex-wrap: wrap;
@@ -242,11 +280,6 @@ body{
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin: 0;
-  }
-
-  .layout .info__item span, .layout .info__item ul {
-    font-size: 15px;
   }
 
   .layout .info__item_main {
@@ -256,13 +289,8 @@ body{
     flex-basis: 35%;
   }
     
-  .layout .info__item ul li {
-    list-style-type: disc;
+  .layout .info__item li {
     margin-left: 15px;
-  }
-  .layout .info__item ul li::marker {
-    color: var(--main-content-color);
-    font-size: 10px;
   }
 
   .layout .info__bonuses {
@@ -275,11 +303,9 @@ body{
   .layout .info__bonuses-content {
     display: flex;
     flex-direction: column;
-    width: 100%;
     margin-right: 20px;
   }
 
-  
   .layout .info__bonuses-content h3 {
     color: var(--main-content-color);
     margin: 0 0 15px 0;
@@ -292,16 +318,9 @@ body{
   }
 
   .layout .info__bonuses-content li {
-    list-style-type: disc;
     margin: 10px 30px 0 0;
-    font-size: 15px;
     width: 45%;
     height: max-content;
-  }
-  
-  .layout .info__bonuses-content ul li::marker {
-    color: var(--main-content-color);
-    font-size: 10px;
   }
 
   .layout .info__organizer {
@@ -311,7 +330,6 @@ body{
     text-align: center;
     gap: 10px;
     border-top: 3px solid var(--main-bg-color);
-    width: 100%;
     padding: 50px 20px;
     background-image: url(./assets/97_gray_logo.png);
     background-repeat: no-repeat;
@@ -339,14 +357,6 @@ body{
     width: 100%;
     padding-bottom: 30px;
   }
-
-  .layout #program table {
-    display: flex;
-    align-self: flex-start;
-    margin-left: 20px;
-    font-size: 18px;
-    line-height: 1;
-  }
   .layout .program__dash {
     padding: 0 15px;
     color: var(--main-content-color);
@@ -370,20 +380,11 @@ body{
   }
 
   .layout .program__vline_big {
-    width: 1px;
     height: 100%;
-    margin: auto;
-    border-right: 1px solid #d8d8d8;
   }
 
   .layout .program__list-item {
-    font-size: 15px;
-    list-style-type: disc;
     margin: 10px 0 10px 20px;
-  }
-  .layout .program__list-item::marker {
-    color: var(--main-content-color);
-    font-size: 10px;
   }
   
   .layout .program__author-block {
@@ -400,7 +401,7 @@ body{
     color: var(--main-content-color);
   }
 
-  .layout .program__author-block a {
+  .layout .program__author-block a, .layout #registration a {
     color: black;
     border-bottom: 1px dotted black;
   }
@@ -429,9 +430,8 @@ body{
     gap: 20px;
   }
   .layout .partners__title {
-    width: 30%;
+    min-width: 30%;
   }
-
   .layout .partners__logo-block {
     flex-wrap: wrap;
     display: flex;
@@ -442,23 +442,6 @@ body{
     align-self: center;
   }
 
-  .layout .partners__block span {
-    font-size: 18px;
-    position: relative;
-    width: max-content;
-    z-index: 0;
-  }
-  .layout .partners__block span::after {
-    content: '';
-    position: absolute;
-    bottom: 3px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: var(--main-content-color);
-    z-index: -1;
-  }
-
   /* registration */
 
   .layout #registration {
@@ -466,53 +449,20 @@ body{
     flex-direction: column;
     align-items: center;
     width: 100%;
-    color: black;
     padding-bottom: 50px;
   }
   .layout #registration span {
     text-align: center;
-    font-size: 18px;
   }
   .layout .registration__text_red {
     color: var(--main-content-color);
-  }
-  .layout #registration form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 60%;
-    margin: 20px 0;
   }
   .layout #registration div {
     display: flex;
     flex-direction: column;
     gap: 5px;
   }
-
-  .layout input {
-    padding: 10px;
-    border: none;
-  }
-
-  .layout input::placeholder {
-    color: black;
-    opacity: 0.5;
-  }
-  .layout #registration button {
-    margin: 20px 0 0 0;
-    display: flex;
-    align-self: center;
-    width: max-content;
-    padding: 10px 30px;
-    border-radius: 40px;
-    border: 1px solid var(--main-content-color);
-    font-size: 20px;
-    color: var(--main-content-color);
-    cursor: pointer;
-  }
-
-  .layout #registration a {
-    color: black;
-    margin-top: 5px;
-    border-bottom: 1px dotted black;
+  
+  .layout .registration__description {
+    font-size: 18px;
   }
