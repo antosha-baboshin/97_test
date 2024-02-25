@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Nineseven" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="https://nineseven.ru/" />
     <title>Тестовая страница (Бабошин)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" type="image/png" href="/assets/favicon.jpg"/>
 </head>
 <body>
     <!-- CONTENT PART -->
@@ -124,26 +129,26 @@
                 <h2>Программа</h2>
                 <table>
                     <tr>
-                        <td>9:15</td>
+                        <td class="program__time">9:15</td>
                         <td class="program__dash">–</td>
-                        <td>10:00</td>
+                        <td class="program__time">10:00</td>
                         <td><div class="program__dot"></div></td>
                         <td>Регистрация слушателей и кофе</td>
                     </tr>
                     <tr><td colspan="3"></td><td class="program__vline-block"><div class="program__vline"></div></td><td></td>
                     </tr>
                     <tr>
-                        <td>10:00</td>
+                        <td class="program__time">10:00</td>
                         <td class="program__dash">–</td>
-                        <td>10:10</td>
+                        <td class="program__time">10:10</td>
                         <td><div class="program__dot"></div></td>
                         <td>Приветственное слово организатора</td>
                     </tr>
                     <tr><td colspan="3"></td><td class="program__vline-block"><div class="program__vline"></div></td><td></td>
                     <tr>
-                        <td>10:10</td>
+                        <td class="program__time">10:10</td>
                         <td class="program__dash">–</td>
-                        <td>11:00</td>
+                        <td class="program__time">11:00</td>
                         <td><div class="program__dot"></div></td>
                         <td>Стратегия запуска. Как сделать и не переделывать</td>
                     </tr>
@@ -159,9 +164,11 @@
                             </ul>
                             <div class="program__author-block">
                                 <img src="./assets/avatar.jpg" alt="Author's photo" width="50px" height="50px">
-                                <span class="program__author">Антон Бабошин</span>
-                                <span>/</span>
-                                <a href="https://www.linkedin.com/in/antosha-baboshin/">о докладчике</a>
+                                <div class="program__author-content">
+                                    <span class="program__author">Антон Бабошин</span>
+                                    <span class="program__sep">/</span>
+                                    <a href="https://www.linkedin.com/in/antosha-baboshin/">о докладчике</a>
+                                </div>
                             </div>
                         </td>
                 </table>
@@ -196,7 +203,7 @@
         <section id="registration">
             <div class="wrapper">
                 <h2>Регистрация на семинар</h2>
-                <span class="registration__description">Количество мест ограничено, поэтому регистрация на семинар предварительная.<br>Ждите подтверждения заявки в течение <span class="registration__text_red">5 дней.</span></span>
+                <span class="registration__description">Количество мест ограничено, поэтому регистрация на семинар предварительная.<br>Ждите подтверждения заявки в течение<span class="registration__text_red"> 5 дней.</span></span>
                 <form>
                     <div>
                         <label for="name">Имя</label>
